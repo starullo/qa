@@ -1,34 +1,31 @@
 package com;
 
 import com.classes.Book;
+import com.classes.Employee;
+import com.classes.Trainee;
 import com.classes.Person;
 
 public class Runner {
 
 	public static void main(String[] args) {
-		Person personOne = new Person("Joe", "Jones", 45, "male");
-		Person personTwo = new Person("Phil", "McSomething", 33, "male");
 		
-		Book bookOne = new Book("The Great Book", "D.H. McSomething", "Mystery", 222);
-		Book bookTwo = new Book("The Big Book", "Professor Wow", "Science", 12345);
+		Person personOne = new Person("Bill");
+		Employee empOne = new Employee("Fred", 99000.00);
+		Trainee trOne = new Trainee("Sally", 9900.00);
 		
-		personOne.read(bookOne, 12);
-		personOne.openBook(bookOne);
-		personOne.read(bookOne, 12);
-		personOne.closeBook(bookOne);
-		personOne.read(bookOne, 43);
-		personOne.openBook(bookOne);
-		personOne.read(bookOne, 43);
-		personOne.closeBook(bookTwo);
+		System.out.println(personOne.getName());
+		System.out.println(empOne.getName());
+		System.out.println(empOne.annualSalary());
+		System.out.println(empOne.weeklySalary());
+		empOne.setWeeklySalary(5000.00);
+		System.out.println(empOne.weeklySalary());
+		System.out.println(empOne.annualSalary());
+		System.out.println(trOne.subjectsLearned());
+		trOne.addSubject("Math");
+		System.out.println(trOne.subjectsLearned());
+		trOne.addSubject("Science");
+		System.out.println(trOne.subjectsLearned());
 		
-		personTwo.closeBook(bookTwo);
-		personTwo.openBook(bookTwo);
-		personTwo.read(bookTwo, 24);
-		personTwo.closeBook(bookTwo);
-		personTwo.read(bookTwo, 13);
-		personTwo.openBook(bookTwo);
-		personTwo.read(bookTwo, 13);
-		personTwo.closeBook(bookTwo);
 
 	}
 
